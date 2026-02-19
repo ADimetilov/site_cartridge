@@ -1,0 +1,60 @@
+.a{
+    width: 33%;
+    height: 30px;
+    text-align: center;
+    background-color: aliceblue;
+}
+.menu{
+    display:inline-block;
+    display:block;
+    width:100%;
+    margin-bottom: 5%;
+}
+
+.menu button{
+    width: 33.33%;
+}
+
+.upload{
+    width: 33%;
+    height: 30px;
+    text-align: center;
+    background-color: aliceblue;
+    float:right;
+    margin-right: 0%;
+}
+
+.table{
+    table-layout: fixed;
+    width: 200px;
+    text-align: center;
+    height: 100px;
+    margin-right: 1%;
+    margin-left: 5%;;
+    border-color: black;
+}
+
+
+.table th{
+    width: 130px;
+    margin: 5%;
+}
+
+.table td{
+    width: 100px;
+    margin: 10%;
+}
+
+.table tr{
+    height: 30px;
+}
+.tables{
+    float:left;
+    display:flex;
+}
+
+.load{
+    margin-bottom: 10%;
+    margin-left: 30%;
+    margin-top: 10%;
+}
