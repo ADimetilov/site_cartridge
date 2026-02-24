@@ -224,27 +224,27 @@ function ButtonToList() {
     const urina = document.getElementById('ur')
     urina.style.backgroundColor = "aqua"
     const malahova51= document.getElementById('mal51')
-    malahova51.style.backgroundColor = "aliceblue"
+    malahova51.style.backgroundColor = 'rgb(66, 154, 231)'
     const malahova53 = document.getElementById('mal53')
-    malahova53.style.backgroundColor = "aliceblue"
+    malahova53.style.backgroundColor = 'rgb(66, 154, 231)'
   }
   const handleClick2 = () => {
     setActiveTable('malahova51');
     setUploadTable('');
     const urina = document.getElementById('ur')
-    urina.style.backgroundColor = "aliceblue"
+    urina.style.backgroundColor = 'rgb(66, 154, 231)'
     const malahova51= document.getElementById('mal51')
     malahova51.style.backgroundColor = "aqua"
     const malahova53 = document.getElementById('mal53')
-    malahova53.style.backgroundColor = "aliceblue"
+    malahova53.style.backgroundColor = 'rgb(66, 154, 231)'
   }
   const handleClick3 = () => {
     setActiveTable('malahova53');
     setUploadTable('');
     const urina = document.getElementById('ur')
-    urina.style.backgroundColor = "aliceblue"
+    urina.style.backgroundColor =  'rgb(66, 154, 231)'
     const malahova51= document.getElementById('mal51')
-    malahova51.style.backgroundColor = "aliceblue"
+    malahova51.style.backgroundColor = 'rgb(66, 154, 231)'
     const malahova53 = document.getElementById('mal53')
     malahova53.style.backgroundColor = "aqua"
   }
@@ -257,7 +257,7 @@ function ButtonToList() {
         <button name="malahova51" id = 'mal51' className={styles.a} onClick={handleClick2}><b>Малахова 51</b></button>
         <button name="malahova53" id = 'mal53' className={styles.a} onClick={handleClick3}><b>Малахова 53</b></button>
       </div>
-      <div className={styles.table_upload}>
+      <div className={styles.buttons}>
         {activeTable==='yurina' && <button name="urina" className={styles.table_upload_but} onClick={()=>setUploadTable('upload_yurina')}><b>Загрузить картриджи на заправку</b></button>}
       </div>
       <div className={styles.tables}>
