@@ -253,9 +253,9 @@ function ButtonToList() {
     <>
     <div className={styles.header}><a><b>Картриджи БСМП№2</b></a></div>
       <div className={styles.menu}>
-        <button name="urina" id='ur' className={styles.a} onClick={handleClick}><b>Юрина</b></button>
-        <button name="malahova51" id = 'mal51' className={styles.a} onClick={handleClick2}><b>Малахова51</b></button>
-        <button name="malahova53" id = 'mal53' className={styles.a} onClick={handleClick3}><b>Малахова53</b></button>
+        <button name="urina" id='ur' className={styles.a} onClick={handleClick}><b>Юрина 210а</b></button>
+        <button name="malahova51" id = 'mal51' className={styles.a} onClick={handleClick2}><b>Малахова 51</b></button>
+        <button name="malahova53" id = 'mal53' className={styles.a} onClick={handleClick3}><b>Малахова 53</b></button>
       </div>
       <div className={styles.table_upload}>
         {activeTable==='yurina' && <button name="urina" className={styles.table_upload_but} onClick={()=>setUploadTable('upload_yurina')}><b>Загрузить картриджи на заправку</b></button>}
