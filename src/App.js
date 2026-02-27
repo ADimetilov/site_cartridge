@@ -55,6 +55,7 @@ function ToUpload(){
     </table>
   );
 }
+
 function ToList() {
   const [list_cart, setCart] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -100,6 +101,55 @@ function ToList() {
             <td>{todo.id}</td>
             <td>{todo.name}</td>
             <td>{todo.value}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
+function Requirement() {
+  const [list_cart, setCart] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const url = "http://10.4.16.9:4433/requirement/all";
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Сервер вернул ошибку: ${response.status} ${response.statusText}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        setCart(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error("Детальная ошибка:", error);
+        setError(`Не удалось загрузить данные: ${error.message}`);
+        setLoading(false);
+      });
+  }, []);
+  
+  //if (loading) return <div className={styles.table}>Загрузка...</div>;
+  if (error) return <div style={{ color: 'red' }}>{error}</div>;
+
+  return (
+    <table name="cartTable" className={styles.table} border="1">
+      <caption><b>Потребность в картриджах</b></caption>
+      <thead>
+        <tr>
+          <th>Модель</th>
+          <th>Количество шт.</th>
+        </tr>
+      </thead>
+      <tbody>
+        {list_cart.map(todo => (
+          <tr key={todo.id}>
+            <td>{todo.name}</td>
+            <td>{todo.score}</td>
           </tr>
         ))}
       </tbody>
@@ -261,13 +311,12 @@ function ButtonToList() {
         {activeTable==='yurina' && <button name="urina" className={styles.table_upload_but} onClick={()=>setUploadTable('upload_yurina')}><b>Загрузить картриджи на заправку</b></button>}
       </div>
       <div className={styles.tables}>
-        
         {activeTable === 'yurina' && <ToList />}
         {activeTable === 'malahova51' && <ToListMalahova51 />}
         {activeTable === 'malahova53' && <ToListMalahova53 />}
         {uploadTable === 'upload_yurina'&&activeTable==='yurina'&& <ToUpload />}
+        {activeTable === 'yurina' && <Requirement/>}
       </div>
-
     </>
   );
 }
